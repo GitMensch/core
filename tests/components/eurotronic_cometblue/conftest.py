@@ -10,6 +10,7 @@ from bleak.backends.scanner import AdvertisementData
 from bleak.exc import BleakCharacteristicNotFoundError
 from eurotronic_cometblue_ha import CometBlueBleakClient
 import pytest
+from pytest_homeassistant.components.bluetooth import generate_ble_device
 
 from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
 from homeassistant.components.eurotronic_cometblue import PLATFORMS
@@ -30,7 +31,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import generate_ble_device
 
 # CometBlue device specific mocks and fixtures
 

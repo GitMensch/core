@@ -1,6 +1,10 @@
 """Test the Xiaomi BLE events."""
 
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    BluetoothServiceInfoBleak,
+    inject_bluetooth_service_info,
+)
 
 from homeassistant.components.event import ATTR_EVENT_TYPE
 from homeassistant.components.xiaomi_ble.const import DOMAIN
@@ -10,10 +14,6 @@ from homeassistant.core import HomeAssistant
 from . import make_advertisement
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import (
-    BluetoothServiceInfoBleak,
-    inject_bluetooth_service_info,
-)
 
 
 @pytest.mark.parametrize(

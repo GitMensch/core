@@ -3,6 +3,10 @@
 from unittest.mock import AsyncMock, Mock, patch
 
 import pykulersky
+from pytest_homeassistant.components.bluetooth import (
+    generate_advertisement_data,
+    generate_ble_device,
+)
 
 from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
 from homeassistant.components.kulersky.config_flow import DOMAIN
@@ -17,7 +21,6 @@ from homeassistant.core import HomeAssistant
 from homeassistant.data_entry_flow import FlowResultType
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import generate_advertisement_data, generate_ble_device
 
 KULERSKY_SERVICE_INFO = BluetoothServiceInfoBleak(
     name="KulerLight",

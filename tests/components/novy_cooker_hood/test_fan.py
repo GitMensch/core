@@ -3,6 +3,9 @@
 from unittest.mock import AsyncMock, call, patch
 
 import pytest
+from pytest_homeassistant.components.radio_frequency.common import (
+    MockRadioFrequencyEntity,
+)
 
 from homeassistant.components.fan import (
     ATTR_PERCENTAGE,
@@ -18,7 +21,6 @@ from homeassistant.const import ATTR_ASSUMED_STATE, ATTR_ENTITY_ID, STATE_OFF, S
 from homeassistant.core import Context, HomeAssistant, State
 
 from tests.common import MockConfigEntry, mock_restore_cache
-from tests.components.radio_frequency.common import MockRadioFrequencyEntity
 
 ENTITY_ID = "fan.novy_cooker_hood"
 

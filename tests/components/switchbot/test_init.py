@@ -6,6 +6,7 @@ from unittest.mock import AsyncMock, MagicMock, call, patch
 
 from freezegun.api import FrozenDateTimeFactory
 import pytest
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 import switchbot
 
 from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
@@ -43,7 +44,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry, async_fire_time_changed
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 @pytest.mark.parametrize(

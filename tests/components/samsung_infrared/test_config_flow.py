@@ -1,6 +1,9 @@
 """Tests for the Samsung Infrared config flow."""
 
 import pytest
+from pytest_homeassistant.components.infrared import (
+    EMITTER_ENTITY_ID as MOCK_INFRARED_ENTITY_ID,
+)
 
 from homeassistant.components.samsung_infrared.const import (
     CONF_DEVICE_TYPE,
@@ -14,7 +17,6 @@ from homeassistant.data_entry_flow import FlowResultType
 from homeassistant.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
-from tests.components.infrared import EMITTER_ENTITY_ID as MOCK_INFRARED_ENTITY_ID
 
 
 @pytest.mark.usefixtures("mock_infrared_emitter_entity")

@@ -4,6 +4,8 @@ from unittest.mock import patch
 
 from infrared_protocols.codes.lg.ac import LGACCode
 import pytest
+from pytest_homeassistant.components.infrared import EMITTER_ENTITY_ID
+from pytest_homeassistant.components.infrared.common import MockInfraredEmitterEntity
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant.components.lg_infrared.const import LGDeviceType
@@ -18,8 +20,6 @@ from homeassistant.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry, mock_restore_cache, snapshot_platform
 from tests.components.common import assert_availability_follows_source_entity
-from tests.components.infrared import EMITTER_ENTITY_ID
-from tests.components.infrared.common import MockInfraredEmitterEntity
 
 _ENTITY_ID = "select.lg_ac_energy_limit"
 

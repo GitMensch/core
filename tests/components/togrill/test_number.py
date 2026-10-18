@@ -5,6 +5,7 @@ from unittest.mock import Mock
 
 from bleak.exc import BleakError
 import pytest
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 from syrupy.assertion import SnapshotAssertion
 from togrill_bluetooth.exceptions import BaseError
 from togrill_bluetooth.packets import (
@@ -29,7 +30,6 @@ from homeassistant.helpers import entity_registry as er
 from . import TOGRILL_SERVICE_INFO, setup_entry
 
 from tests.common import MockConfigEntry, snapshot_platform
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 @pytest.mark.parametrize(

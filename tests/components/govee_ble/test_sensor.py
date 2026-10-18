@@ -4,6 +4,11 @@ from datetime import timedelta
 import time
 
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    inject_bluetooth_service_info,
+    patch_all_discovered_devices,
+    patch_bluetooth_time,
+)
 
 from homeassistant.components.bluetooth import (
     FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS,
@@ -31,11 +36,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry, async_fire_time_changed
-from tests.components.bluetooth import (
-    inject_bluetooth_service_info,
-    patch_all_discovered_devices,
-    patch_bluetooth_time,
-)
 
 
 async def test_sensors(hass: HomeAssistant) -> None:

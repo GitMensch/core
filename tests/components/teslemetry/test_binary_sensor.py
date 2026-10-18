@@ -8,6 +8,13 @@ from unittest.mock import AsyncMock, MagicMock, patch
 from freezegun.api import FrozenDateTimeFactory
 from habluetooth import CONNECTABLE_FALLBACK_MAXIMUM_STALE_ADVERTISEMENT_SECONDS
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    generate_advertisement_data,
+    generate_ble_device,
+    inject_advertisement,
+    patch_all_discovered_devices,
+    patch_bluetooth_time,
+)
 from syrupy.assertion import SnapshotAssertion
 from tesla_fleet_api.tesla.vehicle.bluetooth import VehicleBluetooth
 from teslemetry_stream import Signal
@@ -37,13 +44,6 @@ from . import (
 from .const import ADDRESS, METADATA, VEHICLE_DATA_ALT, VIN
 
 from tests.common import async_fire_time_changed, mock_restore_cache
-from tests.components.bluetooth import (
-    generate_advertisement_data,
-    generate_ble_device,
-    inject_advertisement,
-    patch_all_discovered_devices,
-    patch_bluetooth_time,
-)
 
 
 @pytest.mark.usefixtures("entity_registry_enabled_by_default")

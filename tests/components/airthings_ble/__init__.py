@@ -8,6 +8,10 @@ from airthings_ble import (
     AirthingsDeviceType,
 )
 from bleak.backends.device import BLEDevice
+from pytest_homeassistant.components.bluetooth import (
+    generate_advertisement_data,
+    generate_ble_device,
+)
 
 from homeassistant.components.airthings_ble.const import DOMAIN
 from homeassistant.components.bluetooth.models import BluetoothServiceInfoBleak
@@ -20,7 +24,6 @@ from homeassistant.helpers.device_registry import (
 )
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import generate_advertisement_data, generate_ble_device
 
 
 def patch_async_setup_entry(return_value=True):
