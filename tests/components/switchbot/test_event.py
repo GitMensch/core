@@ -6,6 +6,11 @@ from itertools import count
 from unittest.mock import patch
 
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    generate_advertisement_data,
+    generate_ble_device,
+    inject_bluetooth_service_info,
+)
 
 from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
 from homeassistant.components.switchbot.const import DOMAIN
@@ -21,11 +26,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import (
-    generate_advertisement_data,
-    generate_ble_device,
-    inject_bluetooth_service_info,
-)
 
 
 def _with_doorbell_seq(

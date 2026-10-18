@@ -1,5 +1,6 @@
 """Tests for the diagnostics data provided by the Qingping integration."""
 
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 from syrupy.assertion import SnapshotAssertion
 from syrupy.filters import props
 
@@ -9,7 +10,6 @@ from homeassistant.core import HomeAssistant
 from . import LIGHT_AND_SIGNAL_SERVICE_INFO
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import inject_bluetooth_service_info
 from tests.components.diagnostics import get_diagnostics_for_config_entry
 from tests.typing import ClientSessionGenerator
 

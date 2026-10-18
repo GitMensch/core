@@ -1,5 +1,7 @@
 """Test the Mopeka sensors."""
 
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
+
 from homeassistant.components.mopeka.const import DOMAIN
 from homeassistant.components.sensor import ATTR_STATE_CLASS
 from homeassistant.const import (
@@ -18,7 +20,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 async def test_sensors_unusable_signal(hass: HomeAssistant) -> None:
