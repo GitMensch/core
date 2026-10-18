@@ -7,6 +7,10 @@ from unittest.mock import AsyncMock, MagicMock, patch
 
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    generate_advertisement_data,
+    generate_ble_device,
+)
 from specialized_turbo import PRODUCTION_WRAPPING_KEY, AssistLevel, TelemetrySnapshot
 
 from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
@@ -23,7 +27,6 @@ from homeassistant.const import CONF_ADDRESS
 from homeassistant.core import HomeAssistant
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import generate_advertisement_data, generate_ble_device
 
 MOCK_ADDRESS = "DC:DD:BB:4A:D6:55"
 MOCK_ADDRESS_FORMATTED = "dc:dd:bb:4a:d6:55"

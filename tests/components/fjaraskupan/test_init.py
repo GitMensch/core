@@ -2,6 +2,10 @@
 
 from fjaraskupan import ANNOUNCE_MANUFACTURER, DEVICE_NAME
 from habluetooth import BluetoothServiceInfo
+from pytest_homeassistant.components.bluetooth import (
+    inject_bluetooth_service_info,
+    patch_discovered_devices,
+)
 
 from homeassistant.components.fjaraskupan.const import DOMAIN
 from homeassistant.core import HomeAssistant
@@ -9,10 +13,6 @@ from homeassistant.helpers import device_registry as dr
 from homeassistant.setup import async_setup_component
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import (
-    inject_bluetooth_service_info,
-    patch_discovered_devices,
-)
 from tests.typing import WebSocketGenerator
 
 MOCK_SERVICE_INFO_DISCOVERY = BluetoothServiceInfo(
