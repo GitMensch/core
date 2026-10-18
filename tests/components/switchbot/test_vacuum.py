@@ -4,6 +4,7 @@ from collections.abc import Callable
 from unittest.mock import AsyncMock, MagicMock, patch
 
 import pytest
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 
 from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
 from homeassistant.components.vacuum import (
@@ -25,7 +26,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 @pytest.mark.parametrize(

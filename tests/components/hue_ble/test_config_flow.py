@@ -5,6 +5,7 @@ from unittest.mock import AsyncMock, PropertyMock, patch
 from habluetooth import BluetoothServiceInfoBleak
 from HueBLE import ConnectionError, HueBleError, PairingError
 import pytest
+from pytest_homeassistant.components.bluetooth import BLEDevice, generate_ble_device
 
 from homeassistant.components.hue_ble.config_flow import Error
 from homeassistant.components.hue_ble.const import (
@@ -26,7 +27,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import BLEDevice, generate_ble_device
 
 AUTH_ERROR = ConnectionError()
 AUTH_ERROR.__cause__ = PairingError()

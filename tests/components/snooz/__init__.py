@@ -6,6 +6,10 @@ from unittest.mock import patch
 from pysnooz import SnoozDeviceState, parse_snooz_advertisement, turn_off
 from pysnooz.device import DisconnectionReason, SnoozConnectionStatus
 from pysnooz.testing import MockSnoozDevice as ParentMockSnoozDevice
+from pytest_homeassistant.components.bluetooth import (
+    generate_ble_device,
+    inject_bluetooth_service_info,
+)
 
 from homeassistant.components.snooz.const import DOMAIN
 from homeassistant.const import CONF_ADDRESS, CONF_TOKEN
@@ -13,10 +17,6 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.service_info.bluetooth import BluetoothServiceInfo
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import (
-    generate_ble_device,
-    inject_bluetooth_service_info,
-)
 
 TEST_ADDRESS = "00:00:00:00:AB:CD"
 TEST_SNOOZ_LOCAL_NAME = "Snooz-ABCD"

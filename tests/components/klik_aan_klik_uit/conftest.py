@@ -1,6 +1,9 @@
 """Common fixtures for Kaku RC tests."""
 
 import pytest
+from pytest_homeassistant.components.radio_frequency.common import (
+    MockRadioFrequencyEntity,
+)
 
 from homeassistant.components.klik_aan_klik_uit.const import (
     CONF_CHANNEL,
@@ -13,7 +16,6 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
-from tests.components.radio_frequency.common import MockRadioFrequencyEntity
 
 TRANSMITTER_ENTITY_ID = "radio_frequency.test_rf_transmitter"
 

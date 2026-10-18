@@ -1,6 +1,9 @@
 """Common fixtures for the Honeywell String Lights tests."""
 
 import pytest
+from pytest_homeassistant.components.radio_frequency.common import (
+    MockRadioFrequencyEntity,
+)
 
 from homeassistant.components.honeywell_string_lights.const import (
     CONF_TRANSMITTER,
@@ -10,7 +13,6 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers import entity_registry as er
 
 from tests.common import MockConfigEntry
-from tests.components.radio_frequency.common import MockRadioFrequencyEntity
 
 TRANSMITTER_ENTITY_ID = "radio_frequency.test_rf_transmitter"
 

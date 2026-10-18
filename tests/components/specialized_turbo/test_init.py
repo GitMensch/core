@@ -7,6 +7,7 @@ import time
 from unittest.mock import ANY, AsyncMock, MagicMock, patch
 
 import pytest
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 from specialized_turbo import (
     DecryptionError,
     EncryptionKeyProviderError,
@@ -40,7 +41,6 @@ from .conftest import (
 )
 
 from tests.common import MockConfigEntry, async_fire_time_changed
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 async def test_setup_and_unload_entry(

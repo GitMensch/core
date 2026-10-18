@@ -13,6 +13,7 @@ from gardena_bluetooth.const import (
 )
 from habluetooth import BluetoothServiceInfo
 import pytest
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant.components.gardena_bluetooth import DeviceUnavailable
@@ -31,7 +32,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry, async_fire_time_changed
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 @pytest.mark.parametrize(
