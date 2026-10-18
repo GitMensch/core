@@ -1,6 +1,7 @@
 """Test the Sensirion BLE sensors."""
 
 import pytest
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 
 from homeassistant.components.sensirion_ble.const import DOMAIN
 from homeassistant.components.sensor import ATTR_STATE_CLASS
@@ -10,7 +11,6 @@ from homeassistant.core import HomeAssistant
 from .fixtures import CONFIGURED_NAME, CONFIGURED_PREFIX, SENSIRION_SERVICE_INFO
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 @pytest.mark.usefixtures("enable_bluetooth")

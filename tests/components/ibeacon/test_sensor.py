@@ -3,6 +3,10 @@
 from datetime import timedelta
 
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    inject_bluetooth_service_info,
+    patch_all_discovered_devices,
+)
 
 from homeassistant.components.bluetooth.const import UNAVAILABLE_TRACK_SECONDS
 from homeassistant.components.ibeacon.const import DOMAIN, UPDATE_INTERVAL
@@ -27,10 +31,6 @@ from . import (
 )
 
 from tests.common import MockConfigEntry, async_fire_time_changed
-from tests.components.bluetooth import (
-    inject_bluetooth_service_info,
-    patch_all_discovered_devices,
-)
 
 
 @pytest.fixture(autouse=True)

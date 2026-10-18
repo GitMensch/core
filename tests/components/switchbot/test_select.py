@@ -4,6 +4,7 @@ from collections.abc import Callable
 from unittest.mock import AsyncMock, patch
 
 import pytest
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 from switchbot import NightLightState
 
 from homeassistant.components.select import (
@@ -18,7 +19,6 @@ from homeassistant.setup import async_setup_component
 from . import DOMAIN, STANDING_FAN_SERVICE_INFO, WOMETERTHPC_SERVICE_INFO
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 @pytest.mark.parametrize(

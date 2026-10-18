@@ -5,6 +5,10 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from motionblindsble.const import MotionBlindType
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    generate_advertisement_data,
+    generate_ble_device,
+)
 
 from homeassistant.components.bluetooth.models import BluetoothServiceInfoBleak
 from homeassistant.components.motionblinds_ble.const import (
@@ -16,7 +20,6 @@ from homeassistant.components.motionblinds_ble.const import (
 from homeassistant.const import CONF_ADDRESS
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import generate_advertisement_data, generate_ble_device
 
 
 @pytest.fixture(autouse=True)

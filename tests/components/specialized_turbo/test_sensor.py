@@ -7,6 +7,11 @@ from unittest.mock import MagicMock, patch
 
 from bleak import BleakError
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    inject_bluetooth_service_info,
+    patch_all_discovered_devices,
+    patch_bluetooth_time,
+)
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant.components.bluetooth import (
@@ -30,11 +35,6 @@ from .conftest import (
 )
 
 from tests.common import MockConfigEntry, async_fire_time_changed, snapshot_platform
-from tests.components.bluetooth import (
-    inject_bluetooth_service_info,
-    patch_all_discovered_devices,
-    patch_bluetooth_time,
-)
 
 
 def _entity_id(entity_registry: er.EntityRegistry, key: str) -> str:

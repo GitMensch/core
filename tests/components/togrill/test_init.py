@@ -3,6 +3,7 @@
 from unittest.mock import Mock
 
 from bleak.exc import BleakError
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant.config_entries import ConfigEntryState
@@ -12,7 +13,6 @@ from homeassistant.helpers import device_registry as dr
 from . import TOGRILL_SERVICE_INFO, setup_entry
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 async def test_setup_device_present(

@@ -10,6 +10,12 @@ from bleak import BleakError
 from bleak.backends.scanner import AdvertisementDataCallback
 from dbus_fast import InvalidMessageError
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    async_setup_with_one_adapter,
+    generate_advertisement_data,
+    generate_ble_device,
+    patch_bluetooth_time,
+)
 
 from homeassistant.components import bluetooth
 from homeassistant.components.bluetooth.const import (
@@ -21,13 +27,6 @@ from homeassistant.const import EVENT_HOMEASSISTANT_STARTED, EVENT_HOMEASSISTANT
 from homeassistant.core import HomeAssistant
 from homeassistant.setup import async_setup_component
 from homeassistant.util import dt as dt_util
-
-from . import (
-    async_setup_with_one_adapter,
-    generate_advertisement_data,
-    generate_ble_device,
-    patch_bluetooth_time,
-)
 
 from tests.common import (
     MockConfigEntry,

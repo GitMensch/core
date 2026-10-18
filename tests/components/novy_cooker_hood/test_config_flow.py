@@ -4,6 +4,9 @@ from collections.abc import Iterator
 from unittest.mock import patch
 
 import pytest
+from pytest_homeassistant.components.radio_frequency.common import (
+    MockRadioFrequencyEntity,
+)
 from rf_protocols.codes.novy.cooker_hood import NovyCookerHoodButton
 
 from homeassistant.components.novy_cooker_hood.const import CONF_TRANSMITTER, DOMAIN
@@ -19,7 +22,6 @@ from homeassistant.setup import async_setup_component
 from .conftest import TRANSMITTER_ENTITY_ID
 
 from tests.common import MockConfigEntry
-from tests.components.radio_frequency.common import MockRadioFrequencyEntity
 
 
 @pytest.fixture(autouse=True)
