@@ -2,6 +2,8 @@
 
 from unittest.mock import patch
 
+from pytest_homeassistant.components.bluetooth import inject_bluetooth_service_info
+
 from homeassistant.components.bluetooth.models import BluetoothServiceInfoBleak
 from homeassistant.components.motionblinds_ble import options_update_listener
 from homeassistant.core import HomeAssistant
@@ -9,7 +11,6 @@ from homeassistant.core import HomeAssistant
 from . import setup_integration
 
 from tests.common import MockConfigEntry
-from tests.components.bluetooth import inject_bluetooth_service_info
 
 
 async def test_options_update_listener(

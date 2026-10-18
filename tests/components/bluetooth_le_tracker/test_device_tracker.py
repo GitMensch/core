@@ -7,6 +7,10 @@ from unittest.mock import patch
 from bleak import BleakError
 from freezegun import freeze_time
 import pytest
+from pytest_homeassistant.components.bluetooth import (
+    generate_advertisement_data,
+    generate_ble_device,
+)
 
 from homeassistant.components.bluetooth import BluetoothServiceInfoBleak
 from homeassistant.components.bluetooth_le_tracker import device_tracker
@@ -26,7 +30,6 @@ from homeassistant.setup import async_setup_component
 from homeassistant.util import dt as dt_util, slugify
 
 from tests.common import async_fire_time_changed
-from tests.components.bluetooth import generate_advertisement_data, generate_ble_device
 
 
 class MockBleakClient:

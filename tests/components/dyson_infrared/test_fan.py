@@ -2,6 +2,7 @@
 
 from infrared_protocols.codes.dyson.cool import DysonCoolCode
 import pytest
+from pytest_homeassistant.components.infrared.common import MockInfraredEmitterEntity
 from syrupy.assertion import SnapshotAssertion
 
 from homeassistant.components.fan import (
@@ -18,7 +19,6 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers import device_registry as dr, entity_registry as er
 
 from tests.common import MockConfigEntry, snapshot_platform
-from tests.components.infrared.common import MockInfraredEmitterEntity
 
 
 @pytest.fixture
